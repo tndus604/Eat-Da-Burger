@@ -22,7 +22,7 @@ $(document).ready( function(){
     });
     
     // consumge burger
-    $(".btn-burger").on("click", function(event) {
+    $(".btn-burger").on("click", function() {
       var selectedID = {
         id: $(this).data("id")
       }
