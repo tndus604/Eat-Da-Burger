@@ -15,17 +15,17 @@ router.get("/", function(req, res) {
     })
 });
 
-router.post("/api/newBurger", function(req, res) {
-    burgers.create( request.body.burger_name, function(result) {
-        response.json({id: result.insertId});
+router.post("/api/newburger", function(req, res) {
+    burger.create( req.body.burger_name, function(result) {
+        res.json({id: result.insertId});
         console.log("Newly added ID: ", result.insertId);
     })
 });
 
 router.put("/api/update", function(req, res) {
-    console.log(request.body.id);
+    console.log(req.body.id);
     burger.update( request.body.id, function(result) {
-        response.json({id: result.insertId});
+        res.json({id: result.insertId});
         console.log("Updated ID: ", result.insertId);
     })
 });
