@@ -3,7 +3,6 @@ var express = require("express");
 var router = express.Router();
 
 var burger = require("../models/burger.js");
-const { response } = require("express");
 
 router.get("/", function(req, res) {
     burger.all(function(data) {
@@ -24,7 +23,7 @@ router.post("/api/newburger", function(req, res) {
 
 router.put("/api/update", function(req, res) {
     console.log(req.body.id);
-    burger.update( request.body.id, function(result) {
+    burger.update( req.body.id, function(result) {
         res.json({id: result.insertId});
         console.log("Updated ID: ", result.insertId);
     })
