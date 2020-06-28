@@ -1,6 +1,14 @@
+body {
+    font-family: 'Pangolin', cursive;
+}
+
 .jumbotron {
     background-image: url("https://img.sunset02.com/sites/default/files/classic-burgers-u.jpg");
     background-size: cover;
     color: white;
 }
 
+h2 {
+    color: rgb(255, 217, 0);
+    
+}
