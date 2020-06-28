@@ -1,7 +1,7 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Eat-Da-Burger</h1>
-        <p></p>
+        <h4>Crave your favorite burgers!</h4>
     </div>
 </div>
     
@@ -11,7 +11,7 @@
             <h2 class="text-center">Burger List</h2>
             {{#each burgers}}
             {{#unless devoured}}
-            <div class="burder d-flex justify-content-between">
+            <div class="border d-flex justify-content-between">
                 {{ burger_name }}<button class="btn-burger btn btn-warning btn-sm" data-id={{ id }}><i class="fas fa-hamburger"></i> Crave it!</button>
             </div>
             {{/unless}}
@@ -22,7 +22,7 @@
             <h2 class="text-center">Eaten Burgers</h2>
             {{#each burgers}}
             {{#if devoured}}
-            <div class="eaten d-flex justify-content-center">
+            <div class="border d-flex justify-content-center">
                     {{ burger_name }}
             </div>
             {{/if}}
@@ -30,13 +30,11 @@
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
+
 
 <div class="container">
     <div class="row">
-    <div class="col-12">
+    <div class="col-12 burgerForm">
         <form class="create-burger-form">
             <p>It's PARTY TIME!! Add a burger you would like to eat!!</p>
             <div class="input-group">

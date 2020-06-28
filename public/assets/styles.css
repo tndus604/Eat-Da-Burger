@@ -3,12 +3,26 @@ body {
 }
 
 .jumbotron {
-    background-image: url("https://img.sunset02.com/sites/default/files/classic-burgers-u.jpg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.342) ), url("https://img.sunset02.com/sites/default/files/classic-burgers-u.jpg");
     background-size: cover;
     color: white;
+    height: 250px;
+    padding-top: 100px;
 }
 
 h2 {
     color: rgb(255, 217, 0);
-    
 }
+
+.border {
+    border: 1px solid lightgray;
+    padding: 6px;
+    border-radius: 5px;
+    margin:10px;
+}
+
+.burgerForm {
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
