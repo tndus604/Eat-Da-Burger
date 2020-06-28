@@ -3,6 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 var burger = require("../models/burger.js");
+const { response } = require("express");
 
 router.get("/", function(req, res) {
     burger.all(function(data) {
@@ -14,41 +15,18 @@ router.get("/", function(req, res) {
     })
 });
 
-router.post("/api/burgers", function(req, res) {
-    burgers.create([
-        "burger_name", "devoured"
-    ], [
-        req.body.burger_name, req.body.devoured
-    ], function(result) {
-        res.json({ id: result.insertId });
+router.post("/api/newBurger", function(req, res) {
+    burgers.create( request.body.burger_name, function(result) {
+        response.json({id: result.insertId});
+        console.log("Newly added ID: ", result.insertId);
     })
 });
 
-router.put("/api/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
-
-    console.log("condition", condition);
-
-    burger.update({
-        devoured: req.body.devoured
-    }, condition, function(result) {
-        if (result.changedRows == 0) {
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
-    })
-});
-
-router.delete("/api/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
-    
-    burger.delete(condition, function(result) {
-        if(result.affectedRows == 0) {
-            return res.status(400).end();
-        } else {
-            res.status(200).end();
-        }
+router.put("/api/update", function(req, res) {
+    console.log(request.body.id);
+    burger.update( request.body.id, function(result) {
+        response.json({id: result.insertId});
+        console.log("Updated ID: ", result.insertId);
     })
 });
 
